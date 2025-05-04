@@ -97,10 +97,10 @@ def process_all_images():
     return labeled_imgs, NOT_labeled_imgs
 
 
-def prepare_train_val_images_and_labels(train_val_list, all_imgs_path):
+def prepare_train_val_images_and_labels(train_val_list, all_imgs_path, overlap):
     for image in train_val_list:
         if dictionary.get(image) is not None:
-            process_image(os.path.join(all_imgs_path, image), dictionary[image], "dataset", overlap=100)
+            process_image(os.path.join(all_imgs_path, image), dictionary[image], "dataset", overlap=overlap)
 
 
 def train_val_split():
@@ -108,7 +108,7 @@ def train_val_split():
 
     random.shuffle(NOT_labeled_imgs)
 
-    NOT_labeled_imgs = NOT_labeled_imgs[:len(labeled_imgs) * 5]
+    NOT_labeled_imgs = NOT_labeled_imgs[:len(labeled_imgs) * 2]
 
     os.makedirs("dataset/images/train", exist_ok=True)
     os.makedirs("dataset/labels/train", exist_ok=True)
@@ -145,7 +145,7 @@ def main():
     train_val_list = img_list[:int(0.85 * len(img_list))]
     test_list = img_list[int(0.85 * len(img_list)):]
 
-    prepare_train_val_images_and_labels(train_val_list, all_imgs_path)
+    prepare_train_val_images_and_labels(train_val_list, all_imgs_path, overlap=300)
 
     prepare_test_images_and_labels(test_list, all_imgs_path)
 
