@@ -4,3 +4,16 @@ t.txt
 output.jpg
 .idea/
 runs/
+__pycache__/
+tst/
+test_labels/
+demo_data/
+1.jpg
+1.odt
+mAP_reserve.py
+best.pt
+train_BRA_1001_JPG.rf.fb812848b590b62e90822f85a8454ed6_960_412.txt
+epoch190.pt
+epoch299.pt
+yolov8m.pt
+best.onnx
