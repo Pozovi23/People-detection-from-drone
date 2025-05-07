@@ -29,13 +29,13 @@ def main():
             overlap_width_ratio=0.2,
             postprocess_type="NMS",
         )
-        result.export_visuals(
-            export_dir="demo_data/",
-            file_name=file,
-            hide_labels=True,
-            hide_conf=True,
-            rect_th=2,
-        )
+        # result.export_visuals(
+        #     export_dir="demo_data/",
+        #     file_name=file,
+        #     hide_labels=True,
+        #     hide_conf=True,
+        #     rect_th=2,
+        # )
         object_prediction_list = result.to_coco_annotations()
         for bbox in object_prediction_list:
             curr_detection = [counter, 0, bbox["score"]] + bbox["bbox"]
