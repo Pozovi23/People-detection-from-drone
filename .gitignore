@@ -24,3 +24,4 @@ test3.py
 prepare_dataset_full_size.py
 best_old.pt
 results/
+best_simplify.onnx
