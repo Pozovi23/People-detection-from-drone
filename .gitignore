@@ -17,3 +17,10 @@ epoch190.pt
 epoch299.pt
 yolov8m.pt
 best.onnx
+mAP_2.py
+
+sahi_test.py
+test3.py
+prepare_dataset_full_size.py
+best_old.pt
+results/

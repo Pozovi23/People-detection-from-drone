@@ -21,7 +21,7 @@
 
 На гитхабе я нашел готовый фреймворк для этого дела https://github.com/obss/sahi/tree/main. Его собственно и использовал
 
-Основная метрика на тесте - mAP50, брал реализацию отсюда и чуть менял https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/metrics/mean_avg_precision.py (видео с объяснением алгоритма https://www.youtube.com/watch?v=FppOzcDvaDI&ab_channel=AladdinPersson)
+Основная метрика на тесте - mAP50, метрику снимал при помощи встроенных в sahi функций https://github.com/obss/sahi/blob/main/docs/cli.md
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 ## Тренировка модели и тесты
@@ -36,6 +36,6 @@
 
 |           |           |
 |-----------|--------------------|
-| **mAP50** | 0.6444  |
+| **mAP50** | 0.705  |
 
 Примеры детекций в папке readme_dir, красные боксы - предсказанное, синие - истинные

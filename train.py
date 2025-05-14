@@ -28,20 +28,20 @@ def train():
     print()
     results = model.train(
         data="data.yaml",
-        epochs=500,
+        epochs=1000,
         imgsz=640,
         batch=26,
         save=True,
         save_period=1,
         device="0",
-        optimizer="AdamW",
-        patience=100,
+        optimizer="auto",
+        patience=50,
         val=True,
         augment=True,
         cos_lr=True,
         project="runs/detect",
-        name="yolov8m_custom",
-        pretrained="/home/jovyan/work/detection_nn/yolov8m.pt",
+        name="yolov8m__slice",
+        pretrained="/home/jovyan/work/detection_nn/yolov8m.pt"
     )
 
     print(model.info())

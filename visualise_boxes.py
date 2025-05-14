@@ -13,16 +13,18 @@ def plot_bbox(img_path, label_path):
     with open(label_path, "r") as f:
         lines = f.readlines()
     if lines:
+        print(lines)
         print(label_path)
         for line in lines:
             parts = list(map(float, line.strip().split()))
             class_id = int(parts[0])
 
             x_center, y_center, bw, bh = parts[1], parts[2], parts[3], parts[4]
-            x1 = int((x_center - bw / 2) * w)
-            y1 = int((y_center - bh / 2) * h)
-            x2 = int((x_center + bw / 2) * w)
-            y2 = int((y_center + bh / 2) * h)
+            x1 = int((x_center - bw / 2))
+            y1 = int((y_center - bh / 2))
+            x2 = int((x_center + bw / 2))
+            y2 = int((y_center + bh / 2))
+            print(x1, y1, x2, y2)
             cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 0), 2)
 
         plt.imshow(img)
@@ -31,8 +33,8 @@ def plot_bbox(img_path, label_path):
 
 
 def main():
-    image_dir = "/home/gleb/learning/Detections/dataset/images/train"
-    label_dir = "/home/gleb/learning/Detections/dataset/labels/train"
+    image_dir = "/home/gleb/learning/Detections/dataset/test_images"
+    label_dir = "/home/gleb/learning/Detections/dataset/test_labels"
 
     for img_file in os.listdir(image_dir):
         if img_file.endswith((".jpg", ".png", ".jpeg")):
