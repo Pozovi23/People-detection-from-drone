@@ -25,3 +25,4 @@ prepare_dataset_full_size.py
 best_old.pt
 results/
 best_simplify.onnx
+best_openvino_model/

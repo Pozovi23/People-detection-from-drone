@@ -31,7 +31,7 @@ def main():
     image_dir = "/home/gleb/learning/Detections/demo_data"
     label_dir = "/home/gleb/learning/Detections/dataset/test_labels"
 
-    i = 0
+    i = 10
     for img_file in os.listdir(image_dir):
         if img_file.endswith((".jpg", ".png", ".jpeg")):
             img_path = os.path.join(image_dir, img_file)

@@ -30,8 +30,6 @@ for coco_image in coco_gt.images:
     result.export_visuals(
         export_dir="demo_data/",
         file_name=coco_image.file_name.split("/")[-1],
-        hide_labels=True,
-        hide_conf=True,
         rect_th=2,
     )
     i += 1
